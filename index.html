@@ -79,204 +79,198 @@
                 <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
             </ul>
         </section>
-        6. Backup and Recovery
+        
+        <section class="mt-4">
+    <h4 class="text-secondary fw-bold">6. Backup and Recovery</h4>
+    <ul class="list-unstyled">
+        <li><strong>Backup a database:</strong> mysqldump -u username -p dbname backupfile.sql;</li>
+        <li><strong>Restore a database:</strong> mysql -u username -p dbname &lt; backupfile.sql;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">7. Performance and Maintenance</h4>
+    <ul class="list-unstyled">
+        <li><strong>Analyze a table:</strong> ANALYZE TABLE tablename;</li>
+        <li><strong>Check a table:</strong> CHECK TABLE tablename;</li>
+        <li><strong>Optimize a table:</strong> OPTIMIZE TABLE tablename;</li>
+        <li><strong>Flush privileges:</strong> FLUSH PRIVILEGES;</li>
+        <li><strong>Show processlist:</strong> SHOW PROCESSLIST;</li>
+        <li><strong>Explain query:</strong> EXPLAIN SELECT * FROM tablename;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">8. Miscellaneous</h4>
+    <ul class="list-unstyled">
+        <li><strong>Set SQL mode:</strong> SET sql_mode = 'modes';</li>
+        <li><strong>Show version:</strong> SELECT VERSION();</li>
+        <li><strong>Current database:</strong> SELECT DATABASE();</li>
+        <li><strong>List all indexes:</strong> SHOW INDEX FROM tablename;</li>
+        <li><strong>Change storage engine:</strong> ALTER TABLE tablename ENGINE = InnoDB;</li>
+        <li><strong>Change the delimiter:</strong> DELIMITER $$ (Useful for stored procedures)</li>
+        <li><strong>Execute a script file:</strong> SOURCE /path/to/script.sql;</li>
+        <li><strong>List all triggers:</strong> SHOW TRIGGERS;</li>
+        <li><strong>Show create table statement:</strong> SHOW CREATE TABLE tablename;</li>
+        <li><strong>Show character set:</strong> SHOW CHARACTER SET;</li>
+        <li><strong>Show collation:</strong> SHOW COLLATION;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">9. Text and String Functions</h4>
+    <ul class="list-unstyled">
+        <li><strong>Concatenate strings:</strong> SELECT CONCAT(column1, column2) AS full_name FROM tablename;</li>
+        <li><strong>Convert to uppercase:</strong> SELECT UPPER(column) FROM tablename;</li>
+        <li><strong>Convert to lowercase:</strong> SELECT LOWER(column) FROM tablename;</li>
+        <li><strong>Substring:</strong> SELECT SUBSTRING(column, 1, 10) FROM tablename;</li>
+        <li><strong>Replace text:</strong> SELECT REPLACE(column, 'old', 'new') FROM tablename;</li>
+        <li><strong>Length of a string:</strong> SELECT LENGTH(column) FROM tablename;</li>
+        <li><strong>Trim spaces:</strong> SELECT TRIM(column) FROM tablename;</li>
+        <li><strong>Find position of substring:</strong> SELECT INSTR(column, 'substring') FROM tablename;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">10. Numeric and Date Functions</h4>
+    <ul class="list-unstyled">
+        <li><strong>Round a number:</strong> SELECT ROUND(column, decimals) FROM tablename;</li>
+        <li><strong>Get current date:</strong> SELECT CURDATE();</li>
+        <li><strong>Get current time:</strong> SELECT CURTIME();</li>
+        <li><strong>Extract year from date:</strong> SELECT YEAR(column) FROM tablename;</li>
+        <li><strong>Extract month from date:</strong> SELECT MONTH(column) FROM tablename;</li>
+        <li><strong>Date difference:</strong> SELECT DATEDIFF(date1, date2) FROM tablename;</li>
+        <li><strong>Add days to a date:</strong> SELECT DATE_ADD(column, INTERVAL 10 DAY) FROM tablename;</li>
+        <li><strong>Format date:</strong> SELECT DATE_FORMAT(column, '%Y-%m-%d') FROM tablename;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">11. Conditional Expressions</h4>
+    <ul class="list-unstyled">
+        <li><strong>CASE statement:</strong> SELECT CASE WHEN condition THEN result ELSE default_result END FROM tablename;</li>
+        <li><strong>IF function:</strong> SELECT IF(condition, value_if_true, value_if_false) FROM tablename;</li>
+        <li><strong>IFNULL function:</strong> SELECT IFNULL(column, 'default value') FROM tablename;</li>
+        <li><strong>NULL handling with COALESCE:</strong> SELECT COALESCE(column, 'default value') FROM tablename;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">12. Advanced Join Techniques</h4>
+    <ul class="list-unstyled">
+        <li><strong>Self Join:</strong> SELECT a.column, b.column FROM table a JOIN table b ON a.common_column = b.common_column WHERE condition;</li>
+        <li><strong>Cross Join:</strong> SELECT * FROM table1 CROSS JOIN table2; <em>Produces Cartesian product of the tables.</em></li>
+        <li><strong>Natural Join:</strong> SELECT * FROM table1 NATURAL JOIN table2; <em>Joins using columns with the same names automatically.</em></li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">13. Set Operations</h4>
+    <ul class="list-unstyled">
+        <li><strong>Union:</strong> SELECT column FROM table1 UNION SELECT column FROM table2; <em>Combines results and removes duplicates.</em></li>
+        <li><strong>Union All:</strong> SELECT column FROM table1 UNION ALL SELECT column FROM table2; <em>Combines all results, including duplicates.</em></li>
+        <li><strong>Intersect (simulate using EXISTS):</strong> 
+            SELECT column FROM table1 WHERE EXISTS (SELECT column FROM table2 WHERE table1.column = table2.column);
+        </li>
+        <li><strong>Except (simulate using NOT EXISTS):</strong> 
+            SELECT column FROM table1 WHERE NOT EXISTS (SELECT column FROM table2 WHERE table1.column = table2.column);
+        </li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">14. Database Security</h4>
+    <ul class="list-unstyled">
+        <li><strong>Encrypting data with AES:</strong> SELECT AES_ENCRYPT('text', 'key_string');</li>
+        <li><strong>Decrypting data with AES:</strong> SELECT AES_DECRYPT(column, 'key_string') FROM tablename;</li>
+        <li><strong>Generating MD5 hashes:</strong> SELECT MD5('text');</li>
+        <li><strong>Generating SHA2 hashes:</strong> SELECT SHA2('text', 256);</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">15. Transaction Control</h4>
+    <ul class="list-unstyled">
+        <li><strong>Start a transaction:</strong> START TRANSACTION;</li>
+        <li><strong>Commit a transaction:</strong> COMMIT;</li>
+        <li><strong>Rollback a transaction:</strong> ROLLBACK;</li>
+        <li><strong>Set transaction isolation level:</strong> SET TRANSACTION ISOLATION LEVEL READ COMMITTED;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">16. Database Administration</h4>
+    <ul class="list-unstyled">
+        <li><strong>Viewing current user:</strong> SELECT USER();</li>
+        <li><strong>Changing the database engine:</strong> ALTER TABLE tablename ENGINE = MYISAM;</li>
+        <li><strong>Viewing table storage engine:</strong> SHOW TABLE STATUS LIKE 'tablename';</li>
+        <li><strong>Checking server status:</strong> SHOW STATUS LIKE 'Keys';</li>
+        <li><strong>Viewing active connections:</strong> SHOW PROCESSLIST;</li>
+        <li><strong>Flushing tables or caches:</strong> FLUSH TABLES; FLUSH QUERY CACHE;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">17. Debugging and Profiling</h4>
+    <ul class="list-unstyled">
+        <li><strong>Show warnings after a query:</strong> SHOW WARNINGS;</li>
+        <li><strong>Show last query cost:</strong> SHOW STATUS LIKE 'Last_query_cost';</li>
+        <li><strong>Profile queries for performance:</strong> 
+            SET PROFILING = 1; <br>
+            SHOW PROFILES;
+        </li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">18. Index and Performance Optimization</h4>
+    <ul class="list-unstyled">
+        <li><strong>Creating a full-text index:</strong> CREATE FULLTEXT INDEX ft_index ON tablename (column);</li>
+        <li><strong>Using EXPLAIN to analyze queries:</strong> EXPLAIN SELECT * FROM tablename WHERE column = 'value';</li>
+        <li><strong>Optimizing queries with hints:</strong> SELECT /*+ MAX_EXECUTION_TIME(1000) */ * FROM tablename;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">19. Numeric and Date Functions</h4>
+    <ul class="list-unstyled">
+        <li><strong>Add days to a date:</strong> SELECT DATE_ADD(date_column, INTERVAL 18 DAY) FROM tablename;</li>
+        <li><strong>Subtract days from a date:</strong> SELECT DATE_SUB(date_column, INTERVAL 5 DAY) FROM tablename;</li>
+        <li><strong>Format dates:</strong> SELECT DATE_FORMAT(date_column, '%Y-%m-%d') FROM tablename;</li>
+        <li><strong>Convert strings to dates:</strong> SELECT STR_TO_DATE('2024-01-01', '%Y-%m-%d') FROM tablename;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">20. Aggregate Functions Beyond Basics</h4>
+    <ul class="list-unstyled">
+        <li><strong>Find the minimum value:</strong> SELECT MIN(column) FROM tablename;</li>
+        <li><strong>Find the maximum value:</strong> SELECT MAX(column) FROM tablename;</li>
+        <li><strong>Standard deviation:</strong> SELECT STDDEV(column) FROM tablename;</li>
+        <li><strong>Variance:</strong> SELECT VARIANCE(column) FROM tablename;</li>
+        <li><strong>Group concatenation:</strong> SELECT GROUP_CONCAT(column SEPARATOR ', ') FROM tablename GROUP BY group_column;</li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">21. Database Maintenance and Inspection</h4>
+    <ul class="list-unstyled">
+        <li><strong>Show table status:</strong> SHOW TABLE STATUS LIKE 'tablename';</li>
+        <li><strong>Show engine status:</strong> SHOW ENGINE INNODB STATUS;</li>
+        <li><strong>View the error log:</strong> SHOW VARIABLES LIKE 'log_error'; <em>(Then locate the file on the server)</em></li>
+    </ul>
+</section>
+
+<section class="mt-4">
+    <h4 class="text-secondary fw-bold">22. Information Schema</h4>
+    <ul class="list-unstyled">
+        <li><strong>Get table information:</strong> SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbname';</li>
+        <li><strong>Get columns of a table:</strong> SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'tablename';</li>
+        <li><strong>Find specific table indexes:</strong> SELECT * FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_NAME = 'tablename';</li>
+    </ul>
+</section>
 
-Backup a database: mysqldump -u username -p dbname backupfile.sql;
 
-Restore a database: mysql -u username p dbname backupfile.sql;
-
-7. Performance and Maintenance
-
-Analyze a table: ANALYZE TABLE tablename;
-
-Check a table: CHECK TABLE tablename;
-
-Optimize a table: OPTIMIZE TABLE tablename;
-
-. Flush privileges: FLUSH PRIVILEGES;
-
-Show processlist: SHOW PROCESSLIST;
-
-• Explain query: EXPLAIN SELECT FROM tablename;
-
-8. Miscellaneous
-
-Set SQL mode: SET sql mode 'modes";
-
-Show version: SELECT VERSION();
-
-Current database: SELECT DATABASE();
-
-List all indexes: SHOW INDEX FROM tablename;
-
-Change storage engine: ALTER TABLE tablename ENGINE InnoDB;
-
-• Change the delimiter: DELIMITER SS (Useful for stored procedures)
-
-Execute a script file: SOURCE/path/to/script.sql;
-
-List all triggers: SHOW TRIGGERS,
-
-Show create table statement: SHOW CREATE TABLE tablename;
-
-Show character set: SHOW CHARACTER SET;
-
-Show collation: SHOW COLLATION;
-
-9. Text and String Functions
-
-Concatenate strings: SELECT CONCAT(columni, column2) AS full_name FROM tablename;
-
-Convert to uppercase: SELECT UPPER (column) FROM tablename;
-
-Convert to lowercase: SELECT LOWER (column) FROM tablename;
-
-Substring: SELECT SUBSTRING(column, 1, 10) FROM tablename;
-
-Replace text: SELECT REPLACE(column, old', 'new') FROM tablename;
-
-Length of a string: SELECT LENGTH(column) FROM tablename;
-
-Trim spaces: SELECT TRIM(column) FROM tablename;
-
-Find position of substring: SELECT INSTR(column, substring) FROM tablename:
-
-10. Numeric and Date Functions
-
-Round a number: SELECT ROUND (column, decimals) FROM tablename:
-
-Get current date: SELECT CURDATE():
-
-Get current time: SELECT CURTIME();
-
-Extract year from date: SELECT YEAR(column) FROM tablename;
-
-Extract month from date: SELECT MONTH (column) FROM tablename:
-
-Date difference: SELECT DATEDIFF(datel, date2) FROM tablename:
-
-Add days to a date: SELECT DATE ADD (column, INTERVAL 10 DAY) FRON tablename:
-
-Format date: SELECT DATE FORMAT (column, %Y-%m-%d') FROM tablename:
-
-11. Conditional Expressions
-
-. CASE statement: SELECT CASE WHEN condition THEN result ELSE default result END FROM tablename:
-
-IF function: SELECT IF (condition, value_if_true, value_if_false) FROM tablename:
-
-IFNULL function: SELECT IFNULL(column, default value) FROM tablename;
-
-NULL handling with COALESCE: SELECT COALESCE (column, 'default value') FROM tablename:
-
-12. Advanced Join Techniques
-
-Self Join: SELECT a.column, b.column FROM table a JOIN table b ON a.common.columnb.common.column WHERE condition:
-
-. Cross Join: SELECT FROM table1 CROSS JOIN table2; Produces Cartesian product of the tables.
-
-Natural Join: SELECT FROM tablet NATURAL JOIN table2: joins using columns with the same names. Automatically
-
-13. Set Operations
-
-Union: SELECT column FROM table1 UNION SELECT Column FROM table2:-Combines results and removes duplicates.
-
-Union All: SELECT column FROM tablel UNION ALL SELECT column FROM table2; Combines all results, including duplicates.
-
-Intersect (find matching rows, simulate using joins or exists): SELECT column FROM table1 WHERE EXISTS (SELECT column FROM table2 WHERE tablel.column table2.column);
-
-Except (find non-matching rows, simulate with NOT EXISTS): SELECT column FROM tablel WHERE NOT EXISTS (SELECT column FROM table2 WHERE tablel.column table2.column);
-
-14. Database Security
-
-Encrypting data with AES: SELECT AES ENCRYPT('text', "key_string');
-
-Decrypting data with AES: SELECT AES DECRYPT(column, "key string) FROM tablename:
-
-Generating MD5 hashes: SELECT MD5('text');
-
-Generating SHA2 hashes: SELECT SHA2('text', 256);
-
-15. Transaction Control
-
-Start a transaction: START TRANSACTION;
-
-Commit a transaction: COMMIT:
-
-Rollback a transaction: ROLLBACK;
-
-. Set transaction isolation level: SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
-
-16. Database Administration
-
-Viewing current user: SELECT USER();
-
-Changing the database engine: ALTER TABLE tablename ENGINE MYISAM
-
-Viewing table storage engine: SHOW TABLE STATUS LIKE 'tablename':
-
-Checking server status: SHOW STATUS LIKE "Keys";
-
-Viewing active connections: SHOW PROCESSLIST:
-
-Flushing tables or caches: FLUSH TABLES; FLUSH QUERY CACHE:
-
-17. Debugging and Profiling
-
-Show warnings after a query: SHOW WARNINGS:
-
-Show last query cost: SHOW STATUS LIKE 'Last_query_cost":
-
-Profile queries for performance: SET PROFILING 1 SHOW PROFILES:
-
-18. Index and Performance Optimization
-
-Creating a full-text index: CREATE FULLTEXT INDEX ft index ON tablename (column);
-
-Using EXPLAIll to analyze queries: EXPLAIN SELECT FROM tablename WHERE column value;
-
-Optimizing queries with hints: SELECT / MAX EXECUTIONTIME (1000) */* FROM tablename:
-
-19. Numeric and Date Functions
-
-Add days to a date: SELECT DATE ADD(date_column, INTERVAL 18 DAY) FROM tablename:
-
-Subtract days from a date: SELECT DATE_SUB(date_column. INTERVAL 5 DAY) FROM tablename;
-
-Format dates: SELECT DATE FORMAT(date_column, 'SY-%m-%d') FROM tablename:
-
-Convert strings to dates: SELECT STR_TO DATE(2024-01-01%Y-%m-%d')
-
-FROM tablename:
-
-20. Aggregate Functions Beyond Basics
-
-. Find the minimum value: SELECT MIN(column) FROM tablename:
-
-Find the maximum value: SELECT MAX(columin) FROM tablename:
-
-Standard deviation: SELECT STDDEV(column) FROM tablename:
-
-Variance: SELECT VARIANCE(column) FROM tablename:
-
-Group concatenation: SELECT GROUP CONCAT (column SEPARATOR) FROM tablename GROUP BY group_column;
-
-21. Database Maintenance and Inspection
-
-Show table status: SHOW TABLE STATUS LIKE tablename":
-
-Show engine status: SHOW ENGINE INNODE STATUS,
-
-View the error log: SHOW VARIABLES LIKE log error: (Then locate the file on the server)
-
-22. Information Schema
-
-Get table information: SELECT FROM INFORMATION_SCHEMA TABLES WHERE TABLE SCHEMA dbname;
-
-Get columns of a table: SELECT FROM INFORMATION SCHEMA.COLUMNS WHERE TABLE NAME tablename;
-
-Find specific table indexes: SELECT FROM INFORMATION SCHEMA. STATISTICS WHERE TABLE_NAME tablename:
-     
         <footer class="text-end mt-5">
             <p class="text-muted">By: <strong>Bimbi Villaganas</strong></p>
         </footer>
