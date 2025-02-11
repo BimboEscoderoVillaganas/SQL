@@ -55,39 +55,18 @@
 
 
                 <li><strong>Select and order data: </strong>SELECT FROM tablename ORDER BY column ASC DESC;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
-
-
-Select distinct rows: SELECT DISTINCT coluen FROM tablename;
-
-Count rows: SELECT COUNT(*) FROM tablename;
-
-Sum a column: SELECT SUM(column) FROM tablename:
-
-Average a column: SELECT AVG(column) FROM tablename:
-
-Join tables (INNER JOIN): SELECT FROM tablet INNER JOIN table2 ON tablel.common column table2.common_column;
-
-Left Join: SELECT FROM table1 LEFT JOIN table2 ON tablel.common_column table2.common_column;
-
-Right Join: SELECT FROM table1 RIGHT JOIN table2 ON tablet.common_column table2.common.column;
-
-Full Join: SELECT FROM tablet LEFT JOIN table2 ON tablel.common_column table2.common.column UNION SELECT FROM table1 RIGHT JOIN table2 ON tablel.common_column table2.common_column;
-
-Group data: SELECT column, COUNT(*) FROM tablename GROUP BY column:
-
-Having clause: SELECT column, COUNT(*) FROM tablename GROUP BY column HAVING COUNT(*) 1
-
-Limit results: SELECT FROM tablename LIMIT number:
-
-Offset results: SELECT FROM tablename LIMIT number OFFSET number;
+                <li><strong>Select distinct rows:</strong> SELECT DISTINCT coluen FROM tablename;</li>
+                <li><strong>Count rows:</strong> SELECT COUNT(*) FROM tablename;</li>
+                <li><strong>Sum a column:</strong> SELECT SUM(column) FROM tablename;</li>
+                <li><strong>Average a column:</strong> SELECT AVG(column) FROM tablename;</li>
+                <li><strong>Join tables (INNER JOIN):</strong> SELECT FROM tablet INNER JOIN table2 ON tablel.common column table2.common_column;</li>
+                <li><strong>Left Join:</strong> SELECT FROM table1 LEFT JOIN table2 ON tablel.common_column table2.common_column;</li>
+                <li><strong>Right Join:</strong> SELECT FROM table1 RIGHT JOIN table2 ON tablet.common_column table2.common.column;</li>
+                <li><strong>Full Join:</strong>  SELECT FROM tablet LEFT JOIN table2 ON tablel.common_column table2.common.column UNION SELECT FROM table1 RIGHT JOIN table2 ON tablel.common_column table2.common_column;</li>
+                <li><strong>Group data:</strong>  SELECT column, COUNT(*) FROM tablename GROUP BY column;</li>
+                <li><strong>Having clause:</strong> SELECT column, COUNT(*) FROM tablename GROUP BY column HAVING COUNT(*) 1;</li>
+                <li><strong>Limit results:</strong> SELECT FROM tablename LIMIT number;</li>
+                <li><strong>Offset results:</strong> SELECT FROM tablename LIMIT number OFFSET number;</li>
             </ul>
         </section>
 
@@ -102,35 +81,35 @@ Offset results: SELECT FROM tablename LIMIT number OFFSET number;
         </section>
         6. Backup and Recovery
 
-Backup a database: mysqldump -u username -p dbname backupfile.sql:
+Backup a database: mysqldump -u username -p dbname backupfile.sql;
 
-Restore a database: mysql -u username p dbname backupfile.sql:
+Restore a database: mysql -u username p dbname backupfile.sql;
 
 7. Performance and Maintenance
 
-Analyze a table: ANALYZE TABLE tablename:
+Analyze a table: ANALYZE TABLE tablename;
 
-Check a table: CHECK TABLE tablename:
+Check a table: CHECK TABLE tablename;
 
 Optimize a table: OPTIMIZE TABLE tablename;
 
 . Flush privileges: FLUSH PRIVILEGES;
 
-Show processlist: SHOW PROCESSLIST:
+Show processlist: SHOW PROCESSLIST;
 
 • Explain query: EXPLAIN SELECT FROM tablename;
 
 8. Miscellaneous
 
-Set SQL mode: SET sql mode 'modes":
+Set SQL mode: SET sql mode 'modes";
 
-Show version: SELECT VERSION():
+Show version: SELECT VERSION();
 
-Current database: SELECT DATABASE():
+Current database: SELECT DATABASE();
 
 List all indexes: SHOW INDEX FROM tablename;
 
-Change storage engine: ALTER TABLE tablename ENGINE InnoDB:
+Change storage engine: ALTER TABLE tablename ENGINE InnoDB;
 
 • Change the delimiter: DELIMITER SS (Useful for stored procedures)
 
@@ -138,27 +117,27 @@ Execute a script file: SOURCE/path/to/script.sql;
 
 List all triggers: SHOW TRIGGERS,
 
-Show create table statement: SHOW CREATE TABLE tablename:
+Show create table statement: SHOW CREATE TABLE tablename;
 
-Show character set: SHOW CHARACTER SET:
+Show character set: SHOW CHARACTER SET;
 
-Show collation: SHOW COLLATION:
+Show collation: SHOW COLLATION;
 
 9. Text and String Functions
 
-Concatenate strings: SELECT CONCAT(columni, column2) AS full_name FROM tablename:
+Concatenate strings: SELECT CONCAT(columni, column2) AS full_name FROM tablename;
 
-Convert to uppercase: SELECT UPPER (column) FROM tablename:
+Convert to uppercase: SELECT UPPER (column) FROM tablename;
 
 Convert to lowercase: SELECT LOWER (column) FROM tablename;
 
-Substring: SELECT SUBSTRING(column, 1, 10) FROM tablename:
+Substring: SELECT SUBSTRING(column, 1, 10) FROM tablename;
 
-Replace text: SELECT REPLACE(column, old', 'new') FROM tablename:
+Replace text: SELECT REPLACE(column, old', 'new') FROM tablename;
 
-Length of a string: SELECT LENGTH(column) FROM tablename:
+Length of a string: SELECT LENGTH(column) FROM tablename;
 
-Trim spaces: SELECT TRIM(column) FROM tablename:
+Trim spaces: SELECT TRIM(column) FROM tablename;
 
         <footer class="text-end mt-5">
             <p class="text-muted">By: <strong>Bimbi Villaganas</strong></p>
