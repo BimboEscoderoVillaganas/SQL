@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Basics Cheat Sheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-primary fw-bold"># <span class="text-muted">[</span> MYSQL <span class="text-dark">BASICS</span> <span class="text-muted">]</span> <span class="text-warning">(CheatSheet)</span></h1>
+        
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">1. Database Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Create a database:</strong> CREATE DATABASE dbname;</li>
+                <li><strong>Drop a database:</strong> DROP DATABASE dbname;</li>
+                <li><strong>Select a database:</strong> USE dbname;</li>
+                <li><strong>List all databases:</strong> SHOW DATABASES;</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">2. Table Operations</h4>
+            <ul class="list-unstyled">
+                <li><strong>Create a table:</strong> CREATE TABLE tablename (id INT, data VARCHAR(100));</li>
+                <li><strong>Drop a table:</strong> DROP TABLE tablename;</li>
+                <li><strong>Rename a table:</strong> RENAME TABLE oldname TO newname;</li>
+                <li><strong>List all tables:</strong> SHOW TABLES;</li>
+                <li><strong>Describe table structure:</strong> DESCRIBE tablename;</li>
+                <li><strong>Truncate a table (remove all rows):</strong> TRUNCATE TABLE tablename;</li>
+                <li><strong>Add a column:</strong> ALTER TABLE tablename ADD column_name datatype;</li>
+                <li><strong>Drop a column:</strong> ALTER TABLE tablename DROP column_name;</li>
+                <li><strong>Rename a column:</strong> ALTER TABLE tablename CHANGE old_column_name new_column_name datatype;</li>
+                <li><strong>Modify a column type:</strong> ALTER TABLE tablename MODIFY column_name new_datatype;</li>
+                <li><strong>Add a primary key:</strong> ALTER TABLE tablename ADD PRIMARY KEY (column_name);</li>
+                <li><strong>Drop a primary key:</strong> ALTER TABLE tablename DROP PRIMARY KEY;</li>
+                <li><strong>Add a unique constraint:</strong> ALTER TABLE tablename ADD UNIQUE (column_name);</li>
+                <li><strong>Add a foreign key:</strong> ALTER TABLE tablename ADD CONSTRAINT fk_name FOREIGN KEY (column_name) REFERENCES other_table(column_name);</li>
+                <li><strong>Drop a foreign key:</strong> ALTER TABLE tablename DROP FOREIGN KEY fk_name;</li>
+                <li><strong>Create an index:</strong> CREATE INDEX index_name ON tablename (column_name);</li>
+                <li><strong>Drop an index:</strong> DROP INDEX index_name ON tablename;</li>
+            </ul>
+        </section>
+
+        <section class="mt-4">
+            <h4 class="text-secondary fw-bold">3. Data Manipulation</h4>
+            <ul class="list-unstyled">
+                <li><strong>Insert a row:</strong> INSERT INTO tablename (column1, column2) VALUES (value1, value2);</li>
+                <li><strong>Update rows:</strong> UPDATE tablename SET column1 = value1 WHERE condition;</li>
+                <li><strong>Delete rows:</strong> DELETE FROM tablename WHERE condition;</li>
+                <li><strong>Select data:</strong> SELECT * FROM tablename;</li>
+            </ul>
+        </section>
+
+        <footer class="text-end mt-5">
+            <p class="text-muted">By: <strong>Waleed Mousa</strong></p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+  </html>
