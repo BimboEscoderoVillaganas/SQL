@@ -139,6 +139,144 @@ Length of a string: SELECT LENGTH(column) FROM tablename;
 
 Trim spaces: SELECT TRIM(column) FROM tablename;
 
+Find position of substring: SELECT INSTR(column, substring) FROM tablename:
+
+10. Numeric and Date Functions
+
+Round a number: SELECT ROUND (column, decimals) FROM tablename:
+
+Get current date: SELECT CURDATE():
+
+Get current time: SELECT CURTIME();
+
+Extract year from date: SELECT YEAR(column) FROM tablename;
+
+Extract month from date: SELECT MONTH (column) FROM tablename:
+
+Date difference: SELECT DATEDIFF(datel, date2) FROM tablename:
+
+Add days to a date: SELECT DATE ADD (column, INTERVAL 10 DAY) FRON tablename:
+
+Format date: SELECT DATE FORMAT (column, %Y-%m-%d') FROM tablename:
+
+11. Conditional Expressions
+
+. CASE statement: SELECT CASE WHEN condition THEN result ELSE default result END FROM tablename:
+
+IF function: SELECT IF (condition, value_if_true, value_if_false) FROM tablename:
+
+IFNULL function: SELECT IFNULL(column, default value) FROM tablename;
+
+NULL handling with COALESCE: SELECT COALESCE (column, 'default value') FROM tablename:
+
+12. Advanced Join Techniques
+
+Self Join: SELECT a.column, b.column FROM table a JOIN table b ON a.common.columnb.common.column WHERE condition:
+
+. Cross Join: SELECT FROM table1 CROSS JOIN table2; Produces Cartesian product of the tables.
+
+Natural Join: SELECT FROM tablet NATURAL JOIN table2: joins using columns with the same names. Automatically
+
+13. Set Operations
+
+Union: SELECT column FROM table1 UNION SELECT Column FROM table2:-Combines results and removes duplicates.
+
+Union All: SELECT column FROM tablel UNION ALL SELECT column FROM table2; Combines all results, including duplicates.
+
+Intersect (find matching rows, simulate using joins or exists): SELECT column FROM table1 WHERE EXISTS (SELECT column FROM table2 WHERE tablel.column table2.column);
+
+Except (find non-matching rows, simulate with NOT EXISTS): SELECT column FROM tablel WHERE NOT EXISTS (SELECT column FROM table2 WHERE tablel.column table2.column);
+
+14. Database Security
+
+Encrypting data with AES: SELECT AES ENCRYPT('text', "key_string');
+
+Decrypting data with AES: SELECT AES DECRYPT(column, "key string) FROM tablename:
+
+Generating MD5 hashes: SELECT MD5('text');
+
+Generating SHA2 hashes: SELECT SHA2('text', 256);
+
+15. Transaction Control
+
+Start a transaction: START TRANSACTION;
+
+Commit a transaction: COMMIT:
+
+Rollback a transaction: ROLLBACK;
+
+. Set transaction isolation level: SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+16. Database Administration
+
+Viewing current user: SELECT USER();
+
+Changing the database engine: ALTER TABLE tablename ENGINE MYISAM
+
+Viewing table storage engine: SHOW TABLE STATUS LIKE 'tablename':
+
+Checking server status: SHOW STATUS LIKE "Keys";
+
+Viewing active connections: SHOW PROCESSLIST:
+
+Flushing tables or caches: FLUSH TABLES; FLUSH QUERY CACHE:
+
+17. Debugging and Profiling
+
+Show warnings after a query: SHOW WARNINGS:
+
+Show last query cost: SHOW STATUS LIKE 'Last_query_cost":
+
+Profile queries for performance: SET PROFILING 1 SHOW PROFILES:
+
+18. Index and Performance Optimization
+
+Creating a full-text index: CREATE FULLTEXT INDEX ft index ON tablename (column);
+
+Using EXPLAIll to analyze queries: EXPLAIN SELECT FROM tablename WHERE column value;
+
+Optimizing queries with hints: SELECT / MAX EXECUTIONTIME (1000) */* FROM tablename:
+
+19. Numeric and Date Functions
+
+Add days to a date: SELECT DATE ADD(date_column, INTERVAL 18 DAY) FROM tablename:
+
+Subtract days from a date: SELECT DATE_SUB(date_column. INTERVAL 5 DAY) FROM tablename;
+
+Format dates: SELECT DATE FORMAT(date_column, 'SY-%m-%d') FROM tablename:
+
+Convert strings to dates: SELECT STR_TO DATE(2024-01-01%Y-%m-%d')
+
+FROM tablename:
+
+20. Aggregate Functions Beyond Basics
+
+. Find the minimum value: SELECT MIN(column) FROM tablename:
+
+Find the maximum value: SELECT MAX(columin) FROM tablename:
+
+Standard deviation: SELECT STDDEV(column) FROM tablename:
+
+Variance: SELECT VARIANCE(column) FROM tablename:
+
+Group concatenation: SELECT GROUP CONCAT (column SEPARATOR) FROM tablename GROUP BY group_column;
+
+21. Database Maintenance and Inspection
+
+Show table status: SHOW TABLE STATUS LIKE tablename":
+
+Show engine status: SHOW ENGINE INNODE STATUS,
+
+View the error log: SHOW VARIABLES LIKE log error: (Then locate the file on the server)
+
+22. Information Schema
+
+Get table information: SELECT FROM INFORMATION_SCHEMA TABLES WHERE TABLE SCHEMA dbname;
+
+Get columns of a table: SELECT FROM INFORMATION SCHEMA.COLUMNS WHERE TABLE NAME tablename;
+
+Find specific table indexes: SELECT FROM INFORMATION SCHEMA. STATISTICS WHERE TABLE_NAME tablename:
+     
         <footer class="text-end mt-5">
             <p class="text-muted">By: <strong>Bimbi Villaganas</strong></p>
         </footer>
